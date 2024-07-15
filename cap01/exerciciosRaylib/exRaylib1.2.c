@@ -12,15 +12,24 @@ int main( void ) {
      *     - entrada de dados;
      *     - processamentos adicionais.
      ----------------------------------------------------*/
-    
-    int posX;
-    int posY;
+    int startPosX;
+    int startPosY;
+    int endPosX;
+    int endPosY;
 
-    printf("x: ");
-    scanf("%d", &posX);
+    printf("x inicial: ");
+    scanf("%d", &startPosX);
 
-    printf("y: ");
-    scanf("%d", &posY);
+    printf("y inicial: ");
+    scanf("%d", &startPosY);
+
+    printf("x final: ");
+    scanf("%d", &endPosX);
+
+    printf("y final: ");
+    scanf("%d", &endPosY);
+
+
     
     // ativa a suavização (antialiasing)
     SetConfigFlags( FLAG_MSAA_4X_HINT );
@@ -43,7 +52,7 @@ int main( void ) {
         /*----------------------------------------------------------------------
          * A lógica do seu desenho deve vir aqui.
          ---------------------------------------------------------------------*/
-        DrawPixel(posX, posY, BLACK);
+        DrawLine(startPosX, startPosY, endPosX, endPosY, BLACK);
 
 
         /*----------------------------------------------------------------------
@@ -60,4 +69,3 @@ int main( void ) {
     return 0;
 
 }
-// raylib compile linux command:  gcc filename.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
