@@ -1,47 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main (void) {
-    int n1, n2;
+int main(void)
+{
+    float n1, n2, resultado;
     char opcao;
-    int resultado;
-
 
     printf("Digite o primeiro numero: ");
-    scanf("%d", &n1);
-    
-    printf("Digite o segundo numero: ");
-    scanf("%d", &n2);
+    scanf("%f", &n1);
 
-    printf("Escolha sua opcao: \n");
-    printf("Adicao: +\nSubtracao: -\nMultiplicacao: *\nDivisao: /\n");
-    scanf(" %c", &opcao); 
+    printf("Digite o segundo numero: ");
+    scanf("%f", &n2);
+
+    printf("Escolha uma operacao de acordo com o menu:\n +) Adicao;\n -) Subtracao;\n *) Multiplicacao;\n /) Divisao.\n Operacao: ");
+    scanf(" %c", &opcao);
 
     switch(opcao) {
-        case '+':
-            resultado = n1 + n2;
-            printf("O resultado é %d + %d = %d\n", n1, n2, resultado);
-            break;
+        case ('+'):
+        resultado = n1 + n2;
+        printf("%.2f + %.2f = %.2f", n1, n2 , resultado);
+        break;
 
-        case '-':
-            resultado = n1 - n2;
-            printf("O resultado é %d - %d = %d\n", n1, n2, resultado);
-            break;
+        case('-'):
+        resultado = n1 - n2;
+        printf("%.2f - %.2f = %.2f", n1, n2, resultado);
+        break;
 
-        case '*':
-            resultado = n1 * n2;
-            printf("O resultado é %d * %d = %d\n", n1, n2, resultado);
-            break;
+        case('*'):
+        resultado = n1 * n2;
+        printf("%.2f * %.2f = %.2f", n1, n2, resultado);  
+        break;
 
-        case '/':
-            resultado = n1 / n2;
-            printf("O resultado é %d / %d = %d\n", n1, n2, resultado);
-            break;
+        case('/'):
+        resultado = n1 / n2;
+        printf("%.2f / %.2f = %.2f", n1, n2, resultado);
+        break;
 
         default:
-            printf("Opção inválida");
-            break;
+        printf("Operaçao invalida");
+        break;
+
+
     }
 
     return 0;
+
 }
